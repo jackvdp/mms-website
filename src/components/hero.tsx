@@ -2,20 +2,53 @@
 
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 
 export function Hero() {
+  const [videoLoaded, setVideoLoaded] = useState(false);
+  const [showVideo, setShowVideo] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    // Start loading video after initial page render
+    const timer = setTimeout(() => {
+      setShowVideo(true);
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  const handleVideoLoaded = () => {
+    setVideoLoaded(true);
+    videoRef.current?.play();
+  };
+
   return (
     <section className="relative h-screen w-full overflow-hidden">
-      {/* Video Background */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="absolute inset-0 h-full w-full object-cover"
-      >
-        <source src="/media/main_video.mp4" type="video/mp4" />
-      </video>
+      {/* Poster Image - Shows immediately */}
+      <Image
+        src="/media/hero-poster.jpg"
+        alt="Professional DJ performing at a wedding event in London"
+        fill
+        priority
+        className={`object-cover transition-opacity duration-1000 ${videoLoaded ? "opacity-0" : "opacity-100"}`}
+      />
+
+      {/* Video Background - Lazy loaded */}
+      {showVideo && (
+        <video
+          ref={videoRef}
+          muted
+          loop
+          playsInline
+          preload="auto"
+          onCanPlayThrough={handleVideoLoaded}
+          className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${videoLoaded ? "opacity-100" : "opacity-0"}`}
+        >
+          <source src="/media/main_video.mp4" type="video/mp4" />
+        </video>
+      )}
 
       {/* Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background" />
