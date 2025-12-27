@@ -39,8 +39,8 @@ export function Contact() {
   return (
     <section id="contact" className="relative bg-background py-24 md:py-32 overflow-hidden">
       {/* Background Glows */}
-      <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[180px] pointer-events-none" />
-      <div className="absolute top-1/4 right-0 w-[400px] h-[400px] bg-neon-purple/10 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[80px] pointer-events-none will-change-transform" />
+      <div className="absolute top-1/4 right-0 w-[400px] h-[400px] bg-neon-purple/10 rounded-full blur-[80px] pointer-events-none will-change-transform" />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}

@@ -24,6 +24,20 @@ export function Hero() {
     videoRef.current?.play();
   };
 
+  const scrollToContact = () => {
+    const element = document.querySelector("#contact");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const scrollToServices = () => {
+    const element = document.querySelector("#services");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section className="relative h-screen w-full overflow-hidden">
       {/* Poster Image - Shows immediately */}
@@ -33,6 +47,7 @@ export function Hero() {
         fill
         priority
         className={`object-cover transition-opacity duration-1000 ${videoLoaded ? "opacity-0" : "opacity-100"}`}
+        style={{ willChange: "opacity" }}
       />
 
       {/* Video Background - Lazy loaded */}
@@ -45,6 +60,7 @@ export function Hero() {
           preload="auto"
           onCanPlayThrough={handleVideoLoaded}
           className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${videoLoaded ? "opacity-100" : "opacity-0"}`}
+          style={{ willChange: "opacity" }}
         >
           <source src="/media/main_video.mp4" type="video/mp4" />
         </video>
@@ -88,10 +104,10 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
           className="flex flex-col gap-4 sm:flex-row"
         >
-          <Button size="lg" className="neon-glow text-lg">
+          <Button size="lg" className="neon-glow text-lg" onClick={scrollToContact}>
             Book Now
           </Button>
-          <Button size="lg" variant="outline" className="text-lg !border-white !bg-white/20 text-white hover:!bg-white/30">
+          <Button size="lg" variant="outline" className="text-lg !border-white !bg-white/20 text-white hover:!bg-white/30" onClick={scrollToServices}>
             View Services
           </Button>
         </motion.div>

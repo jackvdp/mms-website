@@ -48,8 +48,8 @@ export function Testimonials() {
   return (
     <section id="testimonials" className="relative bg-background py-24 md:py-32 overflow-hidden">
       {/* Background Glows */}
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[150px] pointer-events-none" />
-      <div className="absolute top-1/3 right-1/4 w-[300px] h-[300px] bg-neon-purple/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[80px] pointer-events-none will-change-transform" />
+      <div className="absolute top-1/3 right-1/4 w-[300px] h-[300px] bg-neon-purple/10 rounded-full blur-[80px] pointer-events-none will-change-transform" />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
@@ -82,7 +82,7 @@ export function Testimonials() {
               variants={cardVariants}
               transition={{ duration: 0.6, ease: "easeOut" }}
               whileHover={{ y: -6 }}
-              className={`group relative rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all hover:border-primary/30 hover:bg-white/10 flex flex-col ${
+              className={`group relative rounded-2xl border border-white/10 bg-white/5 p-6 transition-all hover:border-primary/30 hover:bg-white/10 flex flex-col ${
                 index === 4 || index === 5 ? "lg:col-span-1" : ""
               }`}
             >

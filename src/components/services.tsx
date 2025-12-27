@@ -65,8 +65,8 @@ export function Services() {
   return (
     <section id="services" className="relative bg-background py-24 md:py-32 overflow-hidden">
       {/* Background Glows */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-neon-purple/15 rounded-full blur-[150px] pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary/15 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-neon-purple/15 rounded-full blur-[80px] pointer-events-none will-change-transform" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary/15 rounded-full blur-[80px] pointer-events-none will-change-transform" />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
@@ -109,7 +109,7 @@ export function Services() {
               variants={cardVariants}
               transition={{ duration: 0.5 }}
               whileHover={{ y: -8, scale: 1.02 }}
-              className="group relative rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-colors hover:border-primary/50 hover:bg-white/10"
+              className="group relative rounded-2xl border border-white/10 bg-white/5 p-6 transition-colors hover:border-primary/50 hover:bg-white/10"
             >
               {/* Icon */}
               <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-all group-hover:bg-primary group-hover:text-primary-foreground group-hover:neon-glow">
