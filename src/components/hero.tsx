@@ -21,17 +21,17 @@ export function Hero() {
 
       {/* Content */}
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center">
-        <h1 className="neon-text-glow mb-4 text-5xl font-bold tracking-tight text-primary sm:text-6xl md:text-7xl lg:text-8xl">
+        <h1 className="mb-4 font-display text-6xl font-bold uppercase tracking-wider text-primary drop-shadow-[0_0_25px_rgba(255,20,147,0.3)] sm:text-7xl md:text-8xl lg:text-9xl">
           MMS Events
         </h1>
-        <p className="mb-8 max-w-2xl text-lg text-foreground/90 sm:text-xl md:text-2xl">
+        <p className="mb-8 max-w-2xl text-lg font-semibold text-foreground/90 sm:text-xl md:text-2xl">
           DJs, Weddings & Unforgettable Experiences
         </p>
         <div className="flex flex-col gap-4 sm:flex-row">
           <Button size="lg" className="neon-glow text-lg">
             Book Now
           </Button>
-          <Button size="lg" variant="outline" className="text-lg border-primary/50 hover:bg-primary/10">
+          <Button size="lg" variant="outline" className="text-lg !border-white !bg-white/20 text-white hover:!bg-white/30">
             View Services
           </Button>
         </div>
