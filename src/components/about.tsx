@@ -39,7 +39,10 @@ export function About() {
   const y3 = useTransform(scrollYProgress, [0, 1], [50, -150]);
 
   return (
-    <section ref={containerRef} className="relative overflow-hidden bg-background py-24 md:py-32">
+    <section ref={containerRef} className="relative bg-background py-24 md:py-32">
+      {/* Background Glow Effects - positioned to blend with hero */}
+      <div className="absolute -top-48 -left-64 w-96 h-96 bg-primary/20 rounded-full blur-[128px] pointer-events-none" />
+      <div className="absolute bottom-1/4 -right-64 w-96 h-96 bg-neon-purple/20 rounded-full blur-[128px] pointer-events-none" />
       {/* Intro Section */}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -161,10 +164,6 @@ export function About() {
           </motion.div>
         </motion.div>
       </div>
-
-      {/* Background Glow Effects */}
-      <div className="absolute top-1/4 -left-64 w-96 h-96 bg-primary/20 rounded-full blur-[128px] pointer-events-none" />
-      <div className="absolute bottom-1/4 -right-64 w-96 h-96 bg-neon-purple/20 rounded-full blur-[128px] pointer-events-none" />
-    </section>
+</section>
   );
 }
