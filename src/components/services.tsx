@@ -63,7 +63,7 @@ const cardVariants = {
 
 export function Services() {
   return (
-    <section className="relative bg-background py-24 md:py-32 overflow-hidden">
+    <section id="services" className="relative bg-background py-24 md:py-32 overflow-hidden">
       {/* Background Glows */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-neon-purple/15 rounded-full blur-[150px] pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary/15 rounded-full blur-[150px] pointer-events-none" />

@@ -16,7 +16,7 @@ const images = [
 
 export function Gallery() {
   return (
-    <section className="relative bg-background py-24 md:py-32">
+    <section id="gallery" className="relative bg-background py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 40 }}

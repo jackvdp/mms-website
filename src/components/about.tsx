@@ -39,7 +39,7 @@ export function About() {
   const y3 = useTransform(scrollYProgress, [0, 1], [50, -150]);
 
   return (
-    <section ref={containerRef} className="relative bg-background py-24 md:py-32 overflow-hidden">
+    <section id="about" ref={containerRef} className="relative bg-background py-24 md:py-32 overflow-hidden">
       {/* Background Glow Effects - positioned to blend with hero */}
       <div className="absolute -top-48 -left-64 w-96 h-96 bg-primary/20 rounded-full blur-[128px] pointer-events-none" />
       <div className="absolute bottom-1/4 -right-64 w-96 h-96 bg-neon-purple/20 rounded-full blur-[128px] pointer-events-none" />

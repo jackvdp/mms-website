@@ -6,14 +6,21 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 
 const navLinks = [
-  { href: "#services", label: "Services" },
   { href: "#about", label: "About" },
   { href: "#gallery", label: "Gallery" },
+  { href: "#services", label: "Services" },
   { href: "#testimonials", label: "Testimonials" },
-  { href: "#contact", label: "Contact" },
 ];
 
 export function Navbar() {
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <motion.header
       initial={{ opacity: 0, y: -20 }}
@@ -37,19 +44,29 @@ export function Navbar() {
         {/* Nav Links - Desktop */}
         <div className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (
-            <Link
+            <a
               key={link.href}
               href={link.href}
-              className="text-sm font-semibold text-foreground/80 transition-colors hover:text-primary"
+              onClick={(e) => scrollToSection(e, link.href)}
+              className="text-sm font-semibold text-foreground/80 transition-colors hover:text-primary cursor-pointer"
             >
               {link.label}
-            </Link>
+            </a>
           ))}
         </div>
 
         {/* CTA Button */}
         <div className="flex items-center gap-4">
-          <Button size="sm" className="hidden sm:inline-flex rounded-full">
+          <Button
+            size="sm"
+            className="hidden sm:inline-flex rounded-full"
+            onClick={() => {
+              const element = document.querySelector("#contact");
+              if (element) {
+                element.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
+          >
             Book Now
           </Button>
 

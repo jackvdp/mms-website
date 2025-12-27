@@ -46,7 +46,7 @@ const cardVariants = {
 
 export function Testimonials() {
   return (
-    <section className="relative bg-background py-24 md:py-32 overflow-hidden">
+    <section id="testimonials" className="relative bg-background py-24 md:py-32 overflow-hidden">
       {/* Background Glows */}
       <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[150px] pointer-events-none" />
       <div className="absolute top-1/3 right-1/4 w-[300px] h-[300px] bg-neon-purple/10 rounded-full blur-[120px] pointer-events-none" />

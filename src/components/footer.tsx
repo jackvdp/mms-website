@@ -10,10 +10,17 @@ const navLinks = [
   { href: "#gallery", label: "Gallery" },
   { href: "#services", label: "Services" },
   { href: "#testimonials", label: "Testimonials" },
-  { href: "#contact", label: "Contact" },
 ];
 
 export function Footer() {
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <footer className="relative bg-background border-t border-white/10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
@@ -55,12 +62,13 @@ export function Footer() {
             <ul className="space-y-3">
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  <Link
+                  <a
                     href={link.href}
-                    className="text-muted-foreground hover:text-primary transition-colors"
+                    onClick={(e) => scrollToSection(e, link.href)}
+                    className="text-muted-foreground hover:text-primary transition-colors cursor-pointer"
                   >
                     {link.label}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
