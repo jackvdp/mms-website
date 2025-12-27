@@ -5,6 +5,7 @@ import { Gallery } from "@/components/gallery";
 import { Services } from "@/components/services";
 import { Testimonials } from "@/components/testimonials";
 import { Contact } from "@/components/contact";
+import { Footer } from "@/components/footer";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
         <Testimonials />
         <Contact />
       </main>
+      <Footer />
     </div>
   );
 }

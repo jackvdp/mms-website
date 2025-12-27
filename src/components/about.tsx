@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { Instagram, Facebook, Twitter } from "lucide-react";
+import { Instagram } from "lucide-react";
 
 const images = [
   "/media/5532F409-9BE3-4853-AF05-86841C460A35.jpeg",
@@ -132,36 +132,19 @@ export function About() {
           className="text-center"
         >
           <h3 className="font-display text-2xl uppercase tracking-wider text-foreground mb-8 sm:text-3xl">
-            Follow Our Socials
+            Follow Us on Instagram
           </h3>
-          <motion.div
-            variants={staggerChildren}
-            initial="initial"
-            whileInView="whileInView"
-            viewport={{ once: true }}
-            className="flex justify-center gap-6"
+          <motion.a
+            href="https://instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.1, y: -4 }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-flex h-14 w-14 items-center justify-center rounded-full border border-white/20 bg-white/5 text-foreground transition-colors hover:border-primary hover:text-primary hover:bg-primary/10"
+            aria-label="Instagram"
           >
-            {[
-              { icon: Instagram, href: "#", label: "Instagram" },
-              { icon: Facebook, href: "#", label: "Facebook" },
-              { icon: Twitter, href: "#", label: "Twitter" },
-            ].map(({ icon: Icon, href, label }) => (
-              <motion.a
-                key={label}
-                href={href}
-                variants={{
-                  initial: { opacity: 0, scale: 0.5 },
-                  whileInView: { opacity: 1, scale: 1 },
-                }}
-                whileHover={{ scale: 1.1, y: -4 }}
-                whileTap={{ scale: 0.95 }}
-                className="flex h-14 w-14 items-center justify-center rounded-full border border-white/20 bg-white/5 text-foreground transition-colors hover:border-primary hover:text-primary hover:bg-primary/10"
-                aria-label={label}
-              >
-                <Icon className="h-6 w-6" />
-              </motion.a>
-            ))}
-          </motion.div>
+            <Instagram className="h-6 w-6" />
+          </motion.a>
         </motion.div>
       </div>
 </section>
