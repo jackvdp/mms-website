@@ -40,7 +40,7 @@ export function Footer() {
               Professional DJs & Bands for weddings and events. With 30 years of experience, we turn every occasion into an unforgettable celebration.
             </p>
             <motion.a
-              href="https://instagram.com"
+              href="https://instagram.com/musicmanagementsimplified"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05, y: -2 }}
@@ -50,7 +50,7 @@ export function Footer() {
               <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/5 hover:border-primary hover:bg-primary/10 transition-all">
                 <Instagram className="h-5 w-5" />
               </div>
-              <span className="font-semibold">Follow us on Instagram</span>
+              <span className="font-semibold">@musicmanagementsimplified</span>
             </motion.a>
           </div>
 

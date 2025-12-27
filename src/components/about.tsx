@@ -33,6 +33,13 @@ export function About() {
   const y2 = useTransform(scrollYProgress, [0, 1], [0, -200]);
   const y3 = useTransform(scrollYProgress, [0, 1], [50, -150]);
 
+  const scrollToContact = () => {
+    const element = document.querySelector("#contact");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section id="about" ref={containerRef} className="relative bg-background py-24 md:py-32 overflow-hidden">
       {/* Background Glow Effects - positioned to blend with hero */}
@@ -52,7 +59,7 @@ export function About() {
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground md:text-xl mb-8">
             Whatever you need for your perfect event, we can source it. Through our extensive network of trusted partners built over 30 years, we connect you with the best entertainment, equipment, and services — all tailored to your vision.
           </p>
-          <Button size="lg" className="neon-glow rounded-full">
+          <Button size="lg" className="neon-glow rounded-full" onClick={scrollToContact}>
             Get in Touch
           </Button>
         </motion.div>
@@ -70,7 +77,7 @@ export function About() {
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
               With 30 years in the entertainment industry, we specialise in turning every event—from small gatherings to large celebrations and corporate functions—into memorable experiences. We handle all the details, from selecting the perfect venue to providing everything needed to realize your vision. Our personalized service focuses on your preferences, offering unique suggestions and alternatives to enhance your event.
             </p>
-            <Button size="lg" variant="outline" className="!border-primary !text-primary hover:!bg-primary/10 rounded-full">
+            <Button size="lg" variant="outline" className="!border-primary !text-primary hover:!bg-primary/10 rounded-full" onClick={scrollToContact}>
               Make an Enquiry
             </Button>
           </motion.div>
@@ -130,15 +137,18 @@ export function About() {
             Follow Us on Instagram
           </h3>
           <motion.a
-            href="https://instagram.com"
+            href="https://instagram.com/musicmanagementsimplified"
             target="_blank"
             rel="noopener noreferrer"
-            whileHover={{ scale: 1.1, y: -4 }}
+            whileHover={{ scale: 1.05, y: -4 }}
             whileTap={{ scale: 0.95 }}
-            className="inline-flex h-14 w-14 items-center justify-center rounded-full border border-white/20 bg-white/5 text-foreground transition-colors hover:border-primary hover:text-primary hover:bg-primary/10"
+            className="inline-flex flex-col items-center gap-3"
             aria-label="Instagram"
           >
-            <Instagram className="h-6 w-6" />
+            <div className="flex h-14 w-14 items-center justify-center rounded-full border border-white/20 bg-white/5 text-foreground transition-colors hover:border-primary hover:text-primary hover:bg-primary/10">
+              <Instagram className="h-6 w-6" />
+            </div>
+            <span className="text-muted-foreground hover:text-primary transition-colors">@musicmanagementsimplified</span>
           </motion.a>
         </motion.div>
       </div>

@@ -62,6 +62,13 @@ const cardVariants = {
 };
 
 export function Services() {
+  const scrollToContact = () => {
+    const element = document.querySelector("#contact");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section id="services" className="relative bg-background py-24 md:py-32 overflow-hidden">
       {/* Background Glows */}
@@ -141,7 +148,7 @@ export function Services() {
           <p className="text-muted-foreground mb-6">
             Not sure what you need? We&apos;ll help you create the perfect package.
           </p>
-          <Button size="lg" className="neon-glow rounded-full">
+          <Button size="lg" className="neon-glow rounded-full" onClick={scrollToContact}>
             Discuss Your Event
           </Button>
         </motion.div>
