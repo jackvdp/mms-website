@@ -30,9 +30,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark bg-background" style={{ backgroundColor: '#1a1625' }}>
       <body
-        className={`${inter.variable} ${geistMono.variable} ${bebasNeue.variable} antialiased`}
+        className={`${inter.variable} ${geistMono.variable} ${bebasNeue.variable} antialiased bg-background`}
+        style={{ backgroundColor: '#1a1625' }}
       >
         {children}
       </body>

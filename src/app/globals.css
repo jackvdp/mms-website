@@ -164,31 +164,28 @@
   html {
     scroll-behavior: smooth;
     background-color: oklch(0.12 0.02 300);
+    overflow-x: hidden;
+  }
+  html, body {
+    background-color: oklch(0.12 0.02 300);
   }
   body {
     @apply bg-background text-foreground;
     overscroll-behavior: none;
+    -webkit-overflow-scrolling: touch;
   }
   
-  /* Custom scrollbar */
+  /* Custom scrollbar - Chrome, Edge - hide default */
   ::-webkit-scrollbar {
-    width: 8px;
-  }
-  ::-webkit-scrollbar-track {
-    background: oklch(0.12 0.02 300);
-  }
-  ::-webkit-scrollbar-thumb {
-    background: oklch(0.75 0.28 350);
-    border-radius: 4px;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    background: oklch(0.85 0.22 350);
+    width: 0px;
+    display: none;
   }
   
-  /* Firefox scrollbar */
-  * {
-    scrollbar-width: thin;
-    scrollbar-color: oklch(0.75 0.28 350) oklch(0.12 0.02 300);
+  /* Firefox scrollbar - hide */
+  @supports (scrollbar-color: auto) {
+    * {
+      scrollbar-width: none;
+    }
   }
 }
 
