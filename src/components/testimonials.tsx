@@ -30,20 +30,6 @@ const testimonials = [
   },
 ];
 
-const containerVariants = {
-  initial: {},
-  whileInView: {
-    transition: {
-      staggerChildren: 0.15,
-    },
-  },
-};
-
-const cardVariants = {
-  initial: { opacity: 0, y: 50, scale: 0.95 },
-  whileInView: { opacity: 1, y: 0, scale: 1 },
-};
-
 export function Testimonials() {
   return (
     <section id="testimonials" className="relative bg-background py-24 md:py-32 overflow-hidden">
@@ -69,20 +55,16 @@ export function Testimonials() {
         </motion.div>
 
         {/* Testimonials Grid */}
-        <motion.div
-          variants={containerVariants}
-          initial="initial"
-          whileInView="whileInView"
-          viewport={{ once: true, margin: "-50px" }}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
-        >
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.name}
-              variants={cardVariants}
-              transition={{ duration: 0.6, ease: "easeOut" }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -6 }}
-              className={`group relative rounded-2xl border border-white/10 bg-white/5 p-6 transition-all hover:border-primary/30 hover:bg-white/10 flex flex-col ${
+              className={`group relative rounded-2xl border border-white/10 bg-white/5 p-6 flex flex-col ${
                 index === 4 || index === 5 ? "lg:col-span-1" : ""
               }`}
             >
@@ -113,12 +95,9 @@ export function Testimonials() {
                   {testimonial.name}
                 </span>
               </div>
-
-              {/* Hover Glow */}
-              <div className="absolute inset-0 -z-10 rounded-2xl bg-primary/5 opacity-0 blur-xl transition-opacity group-hover:opacity-100" />
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
