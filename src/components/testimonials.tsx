@@ -82,7 +82,7 @@ export function Testimonials() {
               variants={cardVariants}
               transition={{ duration: 0.6, ease: "easeOut" }}
               whileHover={{ y: -6 }}
-              className={`group relative rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all hover:border-primary/30 hover:bg-white/10 ${
+              className={`group relative rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all hover:border-primary/30 hover:bg-white/10 flex flex-col ${
                 index === 4 || index === 5 ? "lg:col-span-1" : ""
               }`}
             >
@@ -100,12 +100,12 @@ export function Testimonials() {
               </div>
 
               {/* Text */}
-              <p className="text-foreground/90 leading-relaxed mb-6">
+              <p className="text-foreground/90 leading-relaxed mb-6 flex-grow">
                 &ldquo;{testimonial.text}&rdquo;
               </p>
 
               {/* Name */}
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3 mt-auto">
                 <div className="h-10 w-10 rounded-full bg-gradient-to-br from-primary to-neon-purple flex items-center justify-center text-primary-foreground font-bold text-sm">
                   {testimonial.name.charAt(0)}
                 </div>
