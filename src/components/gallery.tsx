@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const images = [
   { 
-    src: "/media/5532F409-9BE3-4853-AF05-86841C460A35.jpeg", 
+    src: "/media/photosmms/image-1.png",
     span: "col-span-2 row-span-2",
     alt: "Wedding DJ performing at a reception in London with dance floor lighting"
   },
@@ -25,17 +25,17 @@ const images = [
     alt: "Photo booth setup with props at a private party in South East UK"
   },
   { 
-    src: "/media/914CE742-D491-4D78-BA7A-55FCC02ECA28.jpeg", 
+    src: "/media/33156D3B-2292-4DC7-9875-70CBF8036CF2.jpeg",
     span: "col-span-1 row-span-1",
     alt: "Professional event lighting and effects at a wedding venue"
   },
   { 
-    src: "/media/33156D3B-2292-4DC7-9875-70CBF8036CF2.jpeg", 
+    src: "/media/photosmms/image-14.png",
     span: "col-span-2 row-span-1",
     alt: "MMS Events DJ setup with sound system and lighting equipment"
   },
   { 
-    src: "/media/414E5D6F-B94F-4E5F-ABBB-ADFE3C59837B.jpeg", 
+    src: "/media/414E5D6F-B94F-4E5F-ABBB-ADFE3C59837B.jpeg",
     span: "col-span-1 row-span-2",
     alt: "Wedding celebration with live entertainment in London"
   },

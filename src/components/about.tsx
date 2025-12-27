@@ -9,9 +9,9 @@ import { Instagram } from "lucide-react";
 import type { Easing } from "framer-motion";
 
 const images = [
-  "/media/5532F409-9BE3-4853-AF05-86841C460A35.jpeg",
+  "/media/photosmms/image-2.png",
   "/media/28A760FD-320A-44A3-8327-E10D4F198A84.jpeg",
-  "/media/7BD28C34-D13B-4AF9-9EE2-8495FA034377.jpeg",
+  "/media/photosmms/image-16.png",
   "/media/93D5F73E-2398-448B-863A-D9B8CDA55DB1.jpeg",
 ];
 
@@ -112,7 +112,7 @@ export function About() {
 
             <motion.div
               style={{ y: y3 }}
-              className="absolute bottom-0 left-[20%] w-[45%] aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl border-4 border-primary/20"
+              className="absolute bottom-0 left-[20%] w-[45%] aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl"
             >
               <Image
                 src={images[2]}
