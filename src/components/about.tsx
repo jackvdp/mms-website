@@ -6,6 +6,8 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { Instagram } from "lucide-react";
 
+import type { Easing } from "framer-motion";
+
 const images = [
   "/media/5532F409-9BE3-4853-AF05-86841C460A35.jpeg",
   "/media/28A760FD-320A-44A3-8327-E10D4F198A84.jpeg",
@@ -17,14 +19,7 @@ const fadeInUp = {
   initial: { opacity: 0, y: 60 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true, margin: "-100px" },
-  transition: { duration: 0.8, ease: "easeOut" },
-};
-
-const staggerChildren = {
-  initial: { opacity: 0 },
-  whileInView: { opacity: 1 },
-  viewport: { once: true, margin: "-100px" },
-  transition: { staggerChildren: 0.2 },
+  transition: { duration: 0.8, ease: "easeOut" as Easing },
 };
 
 export function About() {
