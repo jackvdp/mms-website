@@ -1,5 +1,14 @@
+import { Metadata } from "next";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+
+export const metadata: Metadata = {
+  title: "Terms of Service",
+  description: "Terms of Service for MMS Events. Read our booking terms, cancellation policy, and service agreements for DJ and event entertainment services in London, Essex & South East UK.",
+  alternates: {
+    canonical: "https://mmsdjs.com/terms",
+  },
+};
 
 export default function TermsOfService() {
   return (
@@ -29,7 +38,7 @@ export default function TermsOfService() {
                 2. Our Services
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                MMS Events provides entertainment services including but not limited to DJs, live bands, photo booths, lighting, sound systems, and event accessories for weddings, corporate events, and private functions.
+                MMS Events provides entertainment services including but not limited to DJs, live bands, photo booths, lighting, sound systems, and event accessories for weddings, corporate events, and private functions across London, Essex, and the South East UK.
               </p>
             </section>
 

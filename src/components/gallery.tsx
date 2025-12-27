@@ -4,14 +4,46 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 const images = [
-  { src: "/media/5532F409-9BE3-4853-AF05-86841C460A35.jpeg", span: "col-span-2 row-span-2" },
-  { src: "/media/28A760FD-320A-44A3-8327-E10D4F198A84.jpeg", span: "col-span-1 row-span-1" },
-  { src: "/media/7BD28C34-D13B-4AF9-9EE2-8495FA034377.jpeg", span: "col-span-1 row-span-2" },
-  { src: "/media/93D5F73E-2398-448B-863A-D9B8CDA55DB1.jpeg", span: "col-span-1 row-span-1" },
-  { src: "/media/914CE742-D491-4D78-BA7A-55FCC02ECA28.jpeg", span: "col-span-1 row-span-1" },
-  { src: "/media/33156D3B-2292-4DC7-9875-70CBF8036CF2.jpeg", span: "col-span-2 row-span-1" },
-  { src: "/media/414E5D6F-B94F-4E5F-ABBB-ADFE3C59837B.jpeg", span: "col-span-1 row-span-2" },
-  { src: "/media/A56F1791-5928-4403-B0DD-83C26FE3819C.jpeg", span: "col-span-1 row-span-1" },
+  { 
+    src: "/media/5532F409-9BE3-4853-AF05-86841C460A35.jpeg", 
+    span: "col-span-2 row-span-2",
+    alt: "Wedding DJ performing at a reception in London with dance floor lighting"
+  },
+  { 
+    src: "/media/28A760FD-320A-44A3-8327-E10D4F198A84.jpeg", 
+    span: "col-span-1 row-span-1",
+    alt: "Live band performing at a corporate event in Essex"
+  },
+  { 
+    src: "/media/7BD28C34-D13B-4AF9-9EE2-8495FA034377.jpeg", 
+    span: "col-span-1 row-span-2",
+    alt: "Guests dancing at a wedding party with professional DJ entertainment"
+  },
+  { 
+    src: "/media/93D5F73E-2398-448B-863A-D9B8CDA55DB1.jpeg", 
+    span: "col-span-1 row-span-1",
+    alt: "Photo booth setup with props at a private party in South East UK"
+  },
+  { 
+    src: "/media/914CE742-D491-4D78-BA7A-55FCC02ECA28.jpeg", 
+    span: "col-span-1 row-span-1",
+    alt: "Professional event lighting and effects at a wedding venue"
+  },
+  { 
+    src: "/media/33156D3B-2292-4DC7-9875-70CBF8036CF2.jpeg", 
+    span: "col-span-2 row-span-1",
+    alt: "MMS Events DJ setup with sound system and lighting equipment"
+  },
+  { 
+    src: "/media/414E5D6F-B94F-4E5F-ABBB-ADFE3C59837B.jpeg", 
+    span: "col-span-1 row-span-2",
+    alt: "Wedding celebration with live entertainment in London"
+  },
+  { 
+    src: "/media/A56F1791-5928-4403-B0DD-83C26FE3819C.jpeg", 
+    span: "col-span-1 row-span-1",
+    alt: "Corporate event entertainment with professional DJ in Essex"
+  },
 ];
 
 export function Gallery() {
@@ -29,7 +61,7 @@ export function Gallery() {
             Our Events
           </h2>
           <p className="text-lg text-muted-foreground">
-            A glimpse into the unforgettable moments we create
+            A glimpse into the unforgettable moments we create across London, Essex & South East UK
           </p>
         </motion.div>
 
@@ -46,7 +78,7 @@ export function Gallery() {
             >
               <Image
                 src={image.src}
-                alt={`Event photo ${index + 1}`}
+                alt={image.alt}
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
               />

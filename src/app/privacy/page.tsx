@@ -1,5 +1,14 @@
+import { Metadata } from "next";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+  description: "Privacy Policy for MMS Events. Learn how we collect, use, and protect your personal information when you use our DJ and event entertainment services in London, Essex & South East UK.",
+  alternates: {
+    canonical: "https://mmsdjs.com/privacy",
+  },
+};
 
 export default function PrivacyPolicy() {
   return (

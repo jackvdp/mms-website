@@ -46,7 +46,7 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           className="mb-8 max-w-2xl text-lg font-semibold text-foreground/90 sm:text-xl md:text-2xl"
         >
-          Unforgettable entertainment for your special day
+          Unforgettable entertainment across London, Essex & South East UK
         </motion.p>
 
         <motion.div

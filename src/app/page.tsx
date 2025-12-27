@@ -7,10 +7,12 @@ import { Testimonials } from "@/components/testimonials";
 import { Contact } from "@/components/contact";
 import { Footer } from "@/components/footer";
 import { ScrollProgress } from "@/components/scroll-progress";
+import { StructuredData } from "@/components/structured-data";
 
 export default function Home() {
   return (
     <div className="dark">
+      <StructuredData />
       <ScrollProgress />
       <Navbar />
       <main>
