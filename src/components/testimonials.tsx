@@ -9,10 +9,6 @@ const testimonials = [
     text: "Just wanted to formally thank you. Communication was great throughout and the whole thing was simple from our point of view. Please consider this a 5* review!",
   },
   {
-    name: "James D.",
-    text: "Everyone loved you, thanks so much! Especially my friends that you took requests from :-)",
-  },
-  {
     name: "Samuel",
     text: "I just wanted to say thank you so much for last night. The music was perfect, you really set the scene and got everyone on the dancefloor till the end!",
   },
@@ -25,8 +21,12 @@ const testimonials = [
     text: "Simone was absolutely incredible from start to finish. She took all the stress away and handled everything — from the DJ to the photo booth to the lighting. Whatever we wanted, she was able to source at a really reasonable price. We couldn't recommend her enough!",
   },
   {
-    name: "Marcus & Priya",
-    text: "The personal service was second to none. Simone understood exactly what we wanted and went above and beyond to make it happen. She found us the perfect band within our budget and coordinated everything seamlessly. It felt like she genuinely cared about our day as much as we did.",
+    name: "Aanchel",
+    text: "My son is profoundly deaf and it was wonderful to meet a Santa who knew British Sign Language. We struggled to find a signing Santa for events, so I'm so grateful MMS could provide this. Truly inclusive and thoughtful service.",
+  },
+  {
+    name: "Emma Puddick, Barnes Roffe",
+    text: "Everyone had a great time – the music was perfect! Thank you so much for organising our Friday evening event. We will definitely be in touch to re-book. Have a wonderful Christmas!",
   },
 ];
 
