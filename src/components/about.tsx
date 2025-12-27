@@ -50,12 +50,12 @@ export function About() {
           className="text-center mb-20"
         >
           <h2 className="font-display text-4xl uppercase tracking-wider text-primary drop-shadow-[0_0_25px_rgba(255,20,147,0.3)] sm:text-5xl md:text-6xl lg:text-7xl mb-6">
-            Professional DJs & Bands
+            Your Vision,
             <br />
-            <span className="text-foreground">for Weddings & Events</span>
+            <span className="text-foreground">Our Service</span>
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground md:text-xl mb-8">
-            An agency dedicated to providing you with high quality entertainment services for that special occasion.
+            Whatever you need for your perfect event, we can source it. Through our extensive network of trusted partners built over 30 years, we connect you with the best entertainment, equipment, and services — all tailored to your vision.
           </p>
           <Button size="lg" className="neon-glow rounded-full">
             Get in Touch
