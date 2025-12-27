@@ -163,29 +163,32 @@
   }
   html {
     scroll-behavior: smooth;
-    background-color: oklch(0.12 0.02 300);
+    background-color: #1a1625;
     overflow-x: hidden;
+    overscroll-behavior: none;
   }
   html, body {
-    background-color: oklch(0.12 0.02 300);
+    background-color: #1a1625;
+    overscroll-behavior: none;
+    -webkit-overscroll-behavior: none;
   }
   body {
     @apply bg-background text-foreground;
-    overscroll-behavior: none;
-    -webkit-overflow-scrolling: touch;
+    overflow-x: hidden;
   }
   
-  /* Custom scrollbar - Chrome, Edge - hide default */
-  ::-webkit-scrollbar {
-    width: 0px;
+  /* Hide scrollbar - all browsers */
+  html {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+  
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar {
     display: none;
-  }
-  
-  /* Firefox scrollbar - hide */
-  @supports (scrollbar-color: auto) {
-    * {
-      scrollbar-width: none;
-    }
+    width: 0;
+    height: 0;
+    background: transparent;
   }
 }
 
