@@ -1,0 +1,48 @@
+"use client";
+
+import { Button } from "@/components/ui/button";
+
+export function Hero() {
+  return (
+    <section className="relative h-screen w-full overflow-hidden">
+      {/* Video Background */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 h-full w-full object-cover"
+      >
+        <source src="/media/main_video.mp4" type="video/mp4" />
+      </video>
+
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background" />
+
+      {/* Content */}
+      <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center">
+        <h1 className="neon-text-glow mb-4 text-5xl font-bold tracking-tight text-primary sm:text-6xl md:text-7xl lg:text-8xl">
+          MMS Events
+        </h1>
+        <p className="mb-8 max-w-2xl text-lg text-foreground/90 sm:text-xl md:text-2xl">
+          DJs, Weddings & Unforgettable Experiences
+        </p>
+        <div className="flex flex-col gap-4 sm:flex-row">
+          <Button size="lg" className="neon-glow text-lg">
+            Book Now
+          </Button>
+          <Button size="lg" variant="outline" className="text-lg border-primary/50 hover:bg-primary/10">
+            View Services
+          </Button>
+        </div>
+      </div>
+
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <div className="h-10 w-6 rounded-full border-2 border-primary/50 p-1">
+          <div className="h-2 w-1.5 mx-auto rounded-full bg-primary animate-pulse" />
+        </div>
+      </div>
+    </section>
+  );
+}
