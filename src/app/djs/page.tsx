@@ -152,6 +152,13 @@ const djs = [
     initial: "J",
     image: "/media/djs/john-freeman.png",
   },
+  {
+    name: "Jeet Shanspal",
+    bio: "DJ Senator is a London based open format DJ who has been a staple in the club circuit since the early 2000s. With extensive knowledge of Asian music, Jeet has performed at major UK venues like Ministry of Sound, Fabric, XOYO and many others.",
+    genres: ["Afrobeats", "Afro House", "R&B", "Hip Hop", "Reggae", "Bhangra", "Bollywood"],
+    initial: "J",
+    image: "/media/djs/IMG-20200311-WA0025.jpeg",
+  },
 ];
 
 const containerVariants = {
