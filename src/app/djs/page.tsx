@@ -143,6 +143,12 @@ const djs = [
     bio: "A diverse versatile open format Club/Bar DJ with over 10 years of experience. Gavin has played for several venues over London, Essex, Kent, Ipswich and Birmingham. He specialises in R&B/Hip-Hop and is known for his ability to cater to any crowd.",
     genres: ["Hip Hop", "R&B", "House", "Disco", "Club Classics", "Party Anthems", "90's", "Funk", "Motown"],
     initial: "G",
+  },
+  {
+    name: "John Freeman",
+    bio: "A bubbly open format DJ comfortable playing anything from the 70s through to the present day and mixing it with style. John brings versatility and energy to every event, seamlessly blending decades of music.",
+    genres: ["70s", "80s", "90s", "2000s", "Current Hits", "Open Format"],
+    initial: "J",
     image: "/media/djs/image.png",
   },
 ];
