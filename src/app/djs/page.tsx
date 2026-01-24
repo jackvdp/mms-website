@@ -130,6 +130,7 @@ const djs = [
     genres: ["Hip Hop", "R&B", "Dancehall", "Reggae", "Afrobeats", "Amapiano", "House", "Garage", "Reggaeton", "Disco", "Funk", "Commercial"],
     initial: "T",
     image: "/media/djs/IMG_2675 4.jpeg",
+    imagePosition: "top" as const,
   },
   {
     name: "Marlon Harris",
@@ -179,6 +180,7 @@ const djs = [
     genres: ["House", "Club", "Corporate", "Fashion", "Luxury Events"],
     initial: "S",
     image: "/media/djs/stephjay.png",
+    imagePosition: "top" as const,
   },
   {
     name: "Stephen Mapp",
@@ -312,7 +314,7 @@ export default function DJsPage() {
                         src={dj.image}
                         alt={dj.name}
                         fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        className={`object-cover transition-transform duration-500 group-hover:scale-105 ${"imagePosition" in dj && dj.imagePosition === "top" ? "object-top" : ""}`}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                       {/* Name overlay on image */}
