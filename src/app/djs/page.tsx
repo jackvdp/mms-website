@@ -143,6 +143,7 @@ const djs = [
     bio: "A diverse versatile open format Club/Bar DJ with over 10 years of experience. Gavin has played for several venues over London, Essex, Kent, Ipswich and Birmingham. He specialises in R&B/Hip-Hop and is known for his ability to cater to any crowd.",
     genres: ["Hip Hop", "R&B", "House", "Disco", "Club Classics", "Party Anthems", "90's", "Funk", "Motown"],
     initial: "G",
+    image: "/media/djs/image.png",
   },
 ];
 
