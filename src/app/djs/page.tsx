@@ -149,7 +149,7 @@ const djs = [
     bio: "A bubbly open format DJ comfortable playing anything from the 70s through to the present day and mixing it with style. John brings versatility and energy to every event, seamlessly blending decades of music.",
     genres: ["70s", "80s", "90s", "2000s", "Current Hits", "Open Format"],
     initial: "J",
-    image: "/media/djs/image.png",
+    image: "/media/djs/john-freeman.png",
   },
 ];
 
