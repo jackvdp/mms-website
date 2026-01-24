@@ -159,6 +159,48 @@ const djs = [
     initial: "J",
     image: "/media/djs/IMG-20200311-WA0025.jpeg",
   },
+  {
+    name: "DJ Astech",
+    bio: "From simple birthday parties and small weddings to thousands of festival goers on outdoor stages, and recently the British Grand Prix at Silverstone as part of the corporate hospitality. With a range of systems to suit every event, from compact setups to large field stages used at festivals. The lighting is programmed with the music, designed to be ambient and atmospheric before becoming energising as the tempo increases.",
+    genres: ["Weddings", "Corporate", "Festivals", "Private Parties"],
+    initial: "A",
+    image: "/media/djs/astech.png",
+  },
+  {
+    name: "Danny Borges",
+    bio: "DJ JD is a high-energy, professional DJ specialising in weddings, corporate events, and private parties across London and the UK. With a residency at the British Formula One Grand Prix at Silverstone and performances at over 100 prestigious venues, DJ JD brings proven crowd-reading skills and premium entertainment that keeps dance floors packed all night.",
+    genres: ["House", "Dance", "Hip Hop", "R&B", "Pop", "80s & 90s Classics", "Disco", "Funk", "Soul", "Motown", "Reggae", "Dancehall", "Latin", "Afrobeat", "UK Garage", "EDM"],
+    initial: "D",
+    image: "/media/djs/borges.png",
+  },
+  {
+    name: "DJ Stephanie Jay",
+    bio: "An internationally respected DJ with over 20 years of experience, performing across more than 50 countries worldwide. Her impressive client list includes Porsche, BMW, Rolls-Royce, and Warner Bros, alongside iconic motorsport stages such as Goodwood, Silverstone Formula One, and Formula E. A former resident DJ for Hed Kandi and Ministry of Sound.",
+    genres: ["House", "Club", "Corporate", "Fashion", "Luxury Events"],
+    initial: "S",
+    image: "/media/djs/stephjay.png",
+  },
+  {
+    name: "Stephen Mapp",
+    bio: "DJ Steve Mapp has over 30 years of DJ experience, an exceptional multi-format DJ renowned for being able to read the room and creating an unforgettable music experience. His dynamic repertoire draws on an encyclopaedic knowledge of music spanning the 1950s to today, with setlists that move effortlessly through time and genre.",
+    genres: ["Soul", "Funk", "R&B", "Disco", "House", "Indie", "Latin", "Reggaeton", "Pop", "EDM"],
+    initial: "S",
+    image: "/media/djs/mapp.png",
+  },
+  {
+    name: "Ross Killington",
+    bio: "A DJ who loves weaving genres and eras of music together to make sure the set never gets stale. With 13 years of experience and over 700 gigs under his belt, Ross prides himself on keeping people stuck to the dancefloor all night long.",
+    genres: ["Reggaeton", "Old School R&B", "House", "EDM", "Club Classics"],
+    initial: "R",
+    image: "/media/djs/rosskilington.png",
+  },
+  {
+    name: "DJ Hayley Kennedy",
+    bio: "DJ Hayley Kennedy brings experience you can trust—skilled mixing, crowd awareness, and a professional approach that guarantees a great atmosphere and an unforgettable night. Working with brands such as ALO, F1 and Rolex, private member clubs and restaurants across London, and hosting concert after parties for Beyonce, Taylor Swift and Oasis.",
+    genres: ["Commercial", "Corporate", "Club", "Private Events"],
+    initial: "H",
+    image: "/media/djs/hayleykennedy.png",
+  },
 ];
 
 const containerVariants = {
@@ -205,22 +247,145 @@ export default function DJsPage() {
               </div>
 
               <h1 className="font-display text-4xl uppercase tracking-wider text-primary sm:text-5xl md:text-6xl lg:text-7xl mb-6 drop-shadow-[0_0_25px_rgba(255,20,147,0.3)]">
-                DJ Packages
+                Our DJs
                 <br />
                 <span className="text-foreground">& Services</span>
               </h1>
               <p className="mx-auto max-w-3xl text-lg text-muted-foreground md:text-xl mb-8 leading-relaxed">
-                Professional DJ equipment and talented DJs for any event. From intimate gatherings to large celebrations, we have the perfect package for you.
+                With over 30 years in the industry, we have a network of hundreds of professional DJs. From resident DJs for bars and restaurants to event specialists, we can find the perfect DJ for any occasion.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" className="neon-glow rounded-full" onClick={scrollToContact}>
                   Get a Quote
                 </Button>
                 <Button size="lg" variant="outline" className="!border-primary !text-primary hover:!bg-primary/10 rounded-full">
-                  <a href="#packages">View Packages</a>
+                  <a href="#our-djs">Meet Our DJs</a>
                 </Button>
               </div>
             </motion.div>
+          </div>
+        </section>
+
+        {/* Meet Our DJs Section */}
+        <section id="our-djs" className="relative bg-background py-24 md:py-32 overflow-hidden">
+          {/* Background Glows */}
+          <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-neon-purple/15 rounded-full blur-[80px] pointer-events-none" />
+          <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-primary/15 rounded-full blur-[80px] pointer-events-none" />
+
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+            {/* Header */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <div className="inline-flex items-center justify-center gap-2 mb-4">
+                <HeadphonesIcon className="h-6 w-6 text-primary" />
+                <span className="text-primary font-semibold uppercase tracking-wider text-sm">Our Talent</span>
+              </div>
+              <h2 className="font-display text-3xl uppercase tracking-wider text-foreground sm:text-4xl md:text-5xl mb-6">
+                Meet Our DJs
+              </h2>
+              <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
+                These are just some of the talented DJs in our network. With over 30 years of industry experience, we have access to hundreds of professional DJs for bars, restaurants, clubs, private events, and more. Whatever your occasion, we&apos;ll find the perfect match.
+              </p>
+            </motion.div>
+
+            {/* DJs Grid */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {djs.map((dj, index) => (
+                <motion.div
+                  key={dj.name}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  whileHover={{ y: -6 }}
+                  className="group relative rounded-2xl border border-white/10 bg-white/5 overflow-hidden hover:border-primary/30 hover:bg-white/10 transition-colors"
+                >
+                  {/* Large Image */}
+                  {dj.image ? (
+                    <div className="relative h-64 w-full overflow-hidden">
+                      <Image
+                        src={dj.image}
+                        alt={dj.name}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                      {/* Name overlay on image */}
+                      <div className="absolute bottom-4 left-4 right-4">
+                        <h3 className="font-display text-2xl uppercase tracking-wide text-white drop-shadow-lg">
+                          {dj.name}
+                        </h3>
+                        <div className="flex gap-1 mt-1">
+                          {[...Array(5)].map((_, i) => (
+                            <Star
+                              key={i}
+                              className="h-4 w-4 fill-primary text-primary"
+                            />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="relative h-64 w-full bg-gradient-to-br from-primary/30 to-neon-purple/30 flex items-center justify-center">
+                      <span className="text-6xl font-display font-bold text-white/50">{dj.initial}</span>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                      <div className="absolute bottom-4 left-4 right-4">
+                        <h3 className="font-display text-2xl uppercase tracking-wide text-white drop-shadow-lg">
+                          {dj.name}
+                        </h3>
+                        <div className="flex gap-1 mt-1">
+                          {[...Array(5)].map((_, i) => (
+                            <Star
+                              key={i}
+                              className="h-4 w-4 fill-primary text-primary"
+                            />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Content */}
+                  <div className="p-6">
+                    {/* Bio */}
+                    <p className="text-foreground/90 leading-relaxed mb-4 text-sm line-clamp-4">
+                      {dj.bio}
+                    </p>
+
+                    {/* Genres */}
+                    <div>
+                      <h4 className="text-xs uppercase tracking-wider text-muted-foreground mb-3 flex items-center gap-2">
+                        <Music className="h-4 w-4 text-primary" />
+                        Genres
+                      </h4>
+                      <div className="flex flex-wrap gap-2">
+                        {dj.genres.slice(0, 5).map((genre) => (
+                          <span
+                            key={genre}
+                            className="px-2 py-1 text-xs rounded-full bg-primary/10 text-primary border border-primary/20"
+                          >
+                            {genre}
+                          </span>
+                        ))}
+                        {dj.genres.length > 5 && (
+                          <span className="px-2 py-1 text-xs rounded-full bg-white/10 text-muted-foreground">
+                            +{dj.genres.length - 5} more
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Hover Glow Effect */}
+                  <div className="absolute inset-0 -z-10 rounded-2xl bg-primary/5 opacity-0 blur-xl transition-opacity group-hover:opacity-100" />
+                </motion.div>
+              ))}
+            </div>
           </div>
         </section>
 
