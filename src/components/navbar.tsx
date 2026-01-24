@@ -7,10 +7,17 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { X } from "lucide-react";
 
-const navLinks = [
+type NavLink = {
+  href: string;
+  label: string;
+  isPage?: boolean;
+};
+
+const navLinks: NavLink[] = [
   { href: "#about", label: "About" },
   { href: "#gallery", label: "Gallery" },
   { href: "#services", label: "Services" },
+  { href: "/djs", label: "DJs", isPage: true },
   { href: "#testimonials", label: "Testimonials" },
 ];
 
@@ -50,14 +57,24 @@ export function Navbar() {
           {/* Nav Links - Desktop */}
           <div className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={(e) => scrollToSection(e, link.href)}
-                className="text-sm font-semibold text-foreground/80 transition-colors hover:text-primary cursor-pointer"
-              >
-                {link.label}
-              </a>
+              link.isPage ? (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm font-semibold text-foreground/80 transition-colors hover:text-primary cursor-pointer"
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={(e) => scrollToSection(e, link.href)}
+                  className="text-sm font-semibold text-foreground/80 transition-colors hover:text-primary cursor-pointer"
+                >
+                  {link.label}
+                </a>
+              )
             ))}
           </div>
 
@@ -136,17 +153,34 @@ export function Navbar() {
               {/* Nav Links */}
               <div className="flex flex-col items-center gap-8">
                 {navLinks.map((link, index) => (
-                  <motion.a
-                    key={link.href}
-                    href={link.href}
-                    onClick={(e) => scrollToSection(e, link.href)}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: index * 0.1 }}
-                    className="font-display text-3xl uppercase tracking-wider text-foreground hover:text-primary transition-colors"
-                  >
-                    {link.label}
-                  </motion.a>
+                  link.isPage ? (
+                    <motion.div
+                      key={link.href}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.3, delay: index * 0.1 }}
+                    >
+                      <Link
+                        href={link.href}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="font-display text-3xl uppercase tracking-wider text-foreground hover:text-primary transition-colors"
+                      >
+                        {link.label}
+                      </Link>
+                    </motion.div>
+                  ) : (
+                    <motion.a
+                      key={link.href}
+                      href={link.href}
+                      onClick={(e) => scrollToSection(e, link.href)}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.3, delay: index * 0.1 }}
+                      className="font-display text-3xl uppercase tracking-wider text-foreground hover:text-primary transition-colors"
+                    >
+                      {link.label}
+                    </motion.a>
+                  )
                 ))}
                 
                 <motion.div
