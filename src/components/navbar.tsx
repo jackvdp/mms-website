@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
@@ -23,13 +24,22 @@ const navLinks: NavLink[] = [
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
 
-  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>, href: string) => {
+  const handleSectionLink = (e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>, href: string) => {
     e.preventDefault();
     setMobileMenuOpen(false);
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+
+    if (isHomePage) {
+      // On homepage, scroll to section
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      // On other pages, navigate to homepage with hash
+      window.location.href = "/" + href;
     }
   };
 
@@ -69,7 +79,7 @@ export function Navbar() {
                 <a
                   key={link.href}
                   href={link.href}
-                  onClick={(e) => scrollToSection(e, link.href)}
+                  onClick={(e) => handleSectionLink(e, link.href)}
                   className="text-sm font-semibold text-foreground/80 transition-colors hover:text-primary cursor-pointer"
                 >
                   {link.label}
@@ -83,7 +93,7 @@ export function Navbar() {
             <Button
               size="sm"
               className="hidden sm:inline-flex rounded-full"
-              onClick={(e) => scrollToSection(e, "#contact")}
+              onClick={(e) => handleSectionLink(e, "#contact")}
             >
               Book Now
             </Button>
@@ -172,7 +182,7 @@ export function Navbar() {
                     <motion.a
                       key={link.href}
                       href={link.href}
-                      onClick={(e) => scrollToSection(e, link.href)}
+                      onClick={(e) => handleSectionLink(e, link.href)}
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.3, delay: index * 0.1 }}
@@ -191,7 +201,7 @@ export function Navbar() {
                   <Button
                     size="lg"
                     className="neon-glow rounded-full mt-4"
-                    onClick={(e) => scrollToSection(e, "#contact")}
+                    onClick={(e) => handleSectionLink(e, "#contact")}
                   >
                     Book Now
                   </Button>
