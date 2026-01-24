@@ -16,6 +16,7 @@ import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { ScrollProgress } from "@/components/scroll-progress";
 import Link from "next/link";
+import Image from "next/image";
 
 const djPackages = [
   {
@@ -135,12 +136,14 @@ const djs = [
     bio: "DJ Temi has made a name for herself across London as an adaptable multi-genre DJ who has played at the likes of many 5-star venues such as Nike, Bagatelle and Tottenham Hotspur Stadium. Originally from Lithuania, Temi started working in the music industries in New York in 2016. Known for her smooth transitions across different genres and uplifting beats.",
     genres: ["Hip Hop", "R&B", "Dancehall", "Reggae", "Afrobeats", "Amapiano", "House", "Garage", "Reggaeton", "Disco", "Funk", "Commercial"],
     initial: "T",
+    image: "/media/djs/dj-temi.jpg",
   },
   {
     name: "Marlon Harris",
     bio: "A creative and energetic DJ making the crowd dance all night. Marlon brings infectious energy to every event, reading the room perfectly and keeping the dancefloor packed from start to finish.",
     genres: ["R&B", "Hip Hop", "Afrobeats", "Bashment", "Reggaeton", "House", "Commercial"],
     initial: "M",
+    image: "/media/djs/dj-marlon.jpg",
   },
   {
     name: "Gavin Simpson",
@@ -467,9 +470,21 @@ export default function DJsPage() {
                 >
                   {/* Avatar */}
                   <div className="flex items-center gap-4 mb-6">
-                    <div className="h-16 w-16 rounded-full bg-gradient-to-br from-primary to-neon-purple flex items-center justify-center text-primary-foreground font-bold text-2xl font-display">
-                      {dj.initial}
-                    </div>
+                    {dj.image ? (
+                      <div className="h-16 w-16 rounded-full overflow-hidden ring-2 ring-primary/50 flex-shrink-0">
+                        <Image
+                          src={dj.image}
+                          alt={dj.name}
+                          width={64}
+                          height={64}
+                          className="h-full w-full object-cover"
+                        />
+                      </div>
+                    ) : (
+                      <div className="h-16 w-16 rounded-full bg-gradient-to-br from-primary to-neon-purple flex items-center justify-center text-primary-foreground font-bold text-2xl font-display flex-shrink-0">
+                        {dj.initial}
+                      </div>
+                    )}
                     <div>
                       <h3 className="font-display text-2xl uppercase tracking-wide text-foreground">
                         {dj.name}
