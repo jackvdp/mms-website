@@ -21,7 +21,6 @@ import Image from "next/image";
 const djPackages = [
   {
     name: "XXL Package",
-    price: "£650",
     duration: "4-6 hour event",
     watts: "7200 watts",
     packTime: "1 hour pack down minimum",
@@ -38,7 +37,6 @@ const djPackages = [
   },
   {
     name: "XL Package",
-    price: "£600",
     duration: "4-6 hour event",
     watts: "5000 watts",
     packTime: "1 hour pack down minimum",
@@ -55,7 +53,6 @@ const djPackages = [
   },
   {
     name: "S&H DJ Booth Package",
-    price: "£550",
     duration: "4-6 hour event",
     watts: null,
     packTime: "1 hour pack down minimum",
@@ -72,7 +69,6 @@ const djPackages = [
   },
   {
     name: "Party Package",
-    price: "£500",
     duration: "4-6 hour event",
     watts: null,
     packTime: "1 hour pack down minimum",
@@ -91,7 +87,6 @@ const additionalServices = [
   {
     icon: Lightbulb,
     name: "Uplighting DMX Package",
-    price: "£250",
     duration: "4-6 hour event (add-on)",
     description: "Perfect for weddings or themed events to enhance the atmosphere.",
     features: [
@@ -102,7 +97,6 @@ const additionalServices = [
   {
     icon: Camera,
     name: "Magic Mirror",
-    price: "£450",
     duration: "3 hours service",
     description: "Unlike a photo booth, the Magic Mirror captures full-body pictures, showcasing outfits in their entirety.",
     features: [
@@ -115,8 +109,7 @@ const additionalServices = [
   {
     icon: Star,
     name: "Combo Package",
-    price: "£1,000",
-    duration: "Save £200",
+    duration: "Complete package",
     description: "Complete entertainment solution including setup and pack down.",
     subtitle: "Basic Rig + Magic Mirror (3h) + Battery DMX up light Hire",
     features: [
@@ -239,7 +232,7 @@ export default function DJsPage() {
                 DJ Packages
               </h2>
               <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
-                All packages include 1-hour pack-up and pack-down. Prices exclude ULEZ and Congestion charges.
+                All packages include 1-hour pack-up and pack-down. Contact us for a personalised quote.
               </p>
             </motion.div>
 
@@ -269,19 +262,14 @@ export default function DJsPage() {
                     </div>
                   )}
 
-                  <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
-                    <div>
-                      <h3 className="font-display text-2xl uppercase tracking-wide text-foreground mb-1">
-                        {pkg.name}
-                      </h3>
-                      {pkg.subtitle && (
-                        <p className="text-sm text-muted-foreground">({pkg.subtitle})</p>
-                      )}
-                    </div>
-                    <div className="text-right">
-                      <div className="font-display text-3xl text-primary">{pkg.price}</div>
-                      <div className="text-sm text-muted-foreground">{pkg.duration}</div>
-                    </div>
+                  <div className="mb-6">
+                    <h3 className="font-display text-2xl uppercase tracking-wide text-foreground mb-1">
+                      {pkg.name}
+                    </h3>
+                    {pkg.subtitle && (
+                      <p className="text-sm text-muted-foreground">({pkg.subtitle})</p>
+                    )}
+                    <p className="text-sm text-primary mt-1">{pkg.duration}</p>
                   </div>
 
                   {(pkg.watts || pkg.packTime) && (
@@ -313,28 +301,6 @@ export default function DJsPage() {
               ))}
             </motion.div>
 
-            {/* Charges Note */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="rounded-xl border border-white/10 bg-white/5 p-6 text-center"
-            >
-              <h4 className="font-semibold text-foreground mb-3">Additional Charges for London Events</h4>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center text-sm text-muted-foreground">
-                <div>
-                  <span className="text-primary font-semibold">Central London:</span> £50 (ULEZ + Congestion charge)
-                </div>
-                <div className="hidden sm:block text-white/20">|</div>
-                <div>
-                  <span className="text-primary font-semibold">Outside Central:</span> £30 (ULEZ only)
-                </div>
-              </div>
-              <p className="text-xs text-muted-foreground mt-3">
-                Note: Events requiring pack-down past midnight incur a second daily ULEZ charge.
-              </p>
-            </motion.div>
           </div>
         </section>
 
@@ -400,13 +366,9 @@ export default function DJsPage() {
                     {service.name}
                   </h3>
                   {service.subtitle && (
-                    <p className="text-xs text-muted-foreground mb-3">{service.subtitle}</p>
+                    <p className="text-xs text-muted-foreground mb-2">{service.subtitle}</p>
                   )}
-
-                  <div className="flex items-baseline gap-2 mb-4">
-                    <span className="font-display text-2xl text-primary">{service.price}</span>
-                    <span className="text-sm text-muted-foreground">{service.duration}</span>
-                  </div>
+                  <p className="text-sm text-primary mb-4">{service.duration}</p>
 
                   <p className="text-sm text-muted-foreground mb-4 flex-grow">
                     {service.description}
