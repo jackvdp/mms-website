@@ -258,7 +258,7 @@ export default function DJsPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" className="neon-glow rounded-full" onClick={scrollToContact}>
-                  Get a Quote
+                  Let's Talk
                 </Button>
                 <Button size="lg" variant="outline" className="!border-primary !text-primary hover:!bg-primary/10 rounded-full">
                   <a href="#our-djs">Meet Our DJs</a>
@@ -586,16 +586,16 @@ export default function DJsPage() {
               transition={{ duration: 0.8 }}
             >
               <h2 className="font-display text-3xl uppercase tracking-wider text-foreground sm:text-4xl md:text-5xl mb-6">
-                Ready to Book Your
+                Ready to Find Your
                 <br />
-                <span className="text-primary">Perfect DJ Package?</span>
+                <span className="text-primary">Perfect DJ?</span>
               </h2>
               <p className="mx-auto max-w-2xl text-lg text-muted-foreground mb-8">
-                Contact us today to discuss your event requirements. We&apos;ll help you choose the perfect package and DJ for your special occasion.
+                Every event is unique, and we take the time to understand yours. Get in touch and we&apos;ll personally match you with the right DJ for your occasion.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" className="neon-glow rounded-full" onClick={scrollToContact}>
-                  Get a Free Quote
+                  Let's Talk
                 </Button>
                 <Button size="lg" variant="outline" className="!border-primary !text-primary hover:!bg-primary/10 rounded-full" asChild>
                   <Link href="/">Back to Home</Link>
