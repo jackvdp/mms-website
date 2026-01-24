@@ -136,14 +136,14 @@ const djs = [
     bio: "DJ Temi has made a name for herself across London as an adaptable multi-genre DJ who has played at the likes of many 5-star venues such as Nike, Bagatelle and Tottenham Hotspur Stadium. Originally from Lithuania, Temi started working in the music industries in New York in 2016. Known for her smooth transitions across different genres and uplifting beats.",
     genres: ["Hip Hop", "R&B", "Dancehall", "Reggae", "Afrobeats", "Amapiano", "House", "Garage", "Reggaeton", "Disco", "Funk", "Commercial"],
     initial: "T",
-    image: "/media/djs/dj-temi.jpg",
+    image: "/media/djs/IMG_2675 4.jpeg",
   },
   {
     name: "Marlon Harris",
     bio: "A creative and energetic DJ making the crowd dance all night. Marlon brings infectious energy to every event, reading the room perfectly and keeping the dancefloor packed from start to finish.",
     genres: ["R&B", "Hip Hop", "Afrobeats", "Bashment", "Reggaeton", "House", "Commercial"],
     initial: "M",
-    image: "/media/djs/dj-marlon.jpg",
+    image: "/media/djs/Marlon 2.jpeg",
   },
   {
     name: "Gavin Simpson",
