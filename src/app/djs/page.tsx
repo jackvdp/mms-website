@@ -245,7 +245,7 @@ export default function DJsPage() {
               <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground mb-6">
                 <Link href="/" className="hover:text-primary transition-colors">Home</Link>
                 <ChevronRight className="h-4 w-4" />
-                <span className="text-primary">DJ Services</span>
+                <span className="text-primary">DJs</span>
               </div>
 
               <h1 className="font-display text-4xl uppercase tracking-wider text-primary sm:text-5xl md:text-6xl lg:text-7xl mb-6 drop-shadow-[0_0_25px_rgba(255,20,147,0.3)]">
@@ -411,10 +411,10 @@ export default function DJsPage() {
                 <span className="text-primary font-semibold uppercase tracking-wider text-sm">Equipment Packages</span>
               </div>
               <h2 className="font-display text-3xl uppercase tracking-wider text-foreground sm:text-4xl md:text-5xl mb-6">
-                DJ Packages
+                DJ Equipment Packages
               </h2>
               <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
-                All packages include 1-hour pack-up and pack-down. Contact us for a personalised quote.
+                If you need equipment for your event, then we&#39;ve got you sorted. All packages include 1-hour pack-up and pack-down. Contact us for a personalised quote.
               </p>
             </motion.div>
 
