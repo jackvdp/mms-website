@@ -21,6 +21,25 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 
+const showcaseServices = [
+  { name: "Wedding DJ", image: "/media/services/WeddingDJ.png" },
+  { name: "360 Booths", image: "/media/services/360Booths.png" },
+  { name: "Magic Mirrors", image: "/media/services/MagicMirrors.png" },
+  { name: "Selfie Booths", image: "/media/services/SelfieBooths.png" },
+  { name: "Dance Floor", image: "/media/services/Dancefloor.png" },
+  { name: "Uplighting", image: "/media/services/Uplighting.png" },
+  { name: "Silent Disco", image: "/media/services/SilentDisco.png" },
+  { name: "Karaoke", image: "/media/services/Kararoke.png" },
+  { name: "Love Letters", image: "/media/services/LoveLetters.png" },
+  { name: "Baby Letters", image: "/media/services/Babyletters.png" },
+  { name: "Giant Numbers", image: "/media/services/GiantNumbers.png" },
+  { name: "Speed Quizzing", image: "/media/services/SpeedQuizzing.png" },
+  { name: "Dance Floor Hire", image: "/media/services/Dancefloor2.png" },
+  { name: "360 Video Booth", image: "/media/services/360Booths2.png" },
+  { name: "Mirror Booth", image: "/media/services/MagicMirrors2.png" },
+  { name: "Photo Booth", image: "/media/services/SelfieBooths2.png" },
+];
+
 type Service = {
   name: string;
   tagline: string;
@@ -422,6 +441,61 @@ export default function ServicesPage() {
                 </motion.div>
               ))}
             </motion.div>
+          </div>
+        </section>
+
+        {/* Showcase Gallery */}
+        <section className="relative bg-background py-24 md:py-32 overflow-hidden">
+          <div className="absolute top-1/3 left-0 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
+          <div className="absolute bottom-1/3 right-0 w-[400px] h-[400px] bg-neon-purple/10 rounded-full blur-[100px] pointer-events-none" />
+
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <div className="inline-flex items-center justify-center gap-2 mb-4">
+                <Camera className="h-6 w-6 text-primary" />
+                <span className="text-primary font-semibold uppercase tracking-wider text-sm">See It In Action</span>
+              </div>
+              <h2 className="font-display text-3xl uppercase tracking-wider text-foreground sm:text-4xl md:text-5xl mb-6">
+                What We Provide
+              </h2>
+              <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
+                A glimpse at some of our services in action at real events.
+              </p>
+            </motion.div>
+
+            <div className="grid sm:grid-cols-2 gap-6">
+              {showcaseServices.map((item, index) => (
+                <motion.div
+                  key={`${item.name}-${index}`}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.5, delay: (index % 4) * 0.1 }}
+                  className="group relative rounded-2xl overflow-hidden border border-white/10 hover:border-primary/30 transition-colors"
+                >
+                  <div className="relative aspect-[3/1] w-full overflow-hidden">
+                    <Image
+                      src={item.image}
+                      alt={item.name}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                  </div>
+                  <div className="absolute bottom-3 left-4 right-4">
+                    <h3 className="font-display text-lg uppercase tracking-wider text-white drop-shadow-lg">
+                      {item.name}
+                    </h3>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </section>
 
