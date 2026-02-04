@@ -203,6 +203,13 @@ const djs = [
     initial: "H",
     image: "/media/djs/hayleykennedy.png",
   },
+  {
+    name: "Luc Sinclair",
+    bio: "With nearly 20 years on the DJ circuit, Luc owns a versatile setup boasting over 24,000 tracks and can play on CDJs, any DJ controller, or turntables. He takes his prep seriously so that each set is bespoke and never the same—finding the right balance between a classic everyone knows and a modern re-edit is an art. Luc loves to surprise his crowd while keeping them comfortable.",
+    genres: ["Weddings", "Corporate", "Open Format", "Club", "Private Parties"],
+    initial: "L",
+    image: "/media/djs/lucsinclair.jpeg",
+  },
 ];
 
 const containerVariants = {
