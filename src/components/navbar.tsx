@@ -15,7 +15,7 @@ type NavLink = {
 };
 
 const navLinks: NavLink[] = [
-  { href: "#about", label: "About" },
+  { href: "/about", label: "About", isPage: true },
   { href: "/services", label: "Events", isPage: true },
   { href: "/djs", label: "DJs", isPage: true },
 ];
