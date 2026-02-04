@@ -91,9 +91,9 @@ export function Navbar() {
             <Button
               size="sm"
               className="hidden sm:inline-flex rounded-full"
-              onClick={(e) => handleSectionLink(e, "#contact")}
+              asChild
             >
-              Get In Touch
+              <Link href="/contact">Get In Touch</Link>
             </Button>
 
             {/* Mobile Menu Button */}
@@ -199,9 +199,11 @@ export function Navbar() {
                   <Button
                     size="lg"
                     className="neon-glow rounded-full mt-4"
-                    onClick={(e) => handleSectionLink(e, "#contact")}
+                    asChild
                   >
-                    Get In Touch
+                    <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
+                      Get In Touch
+                    </Link>
                   </Button>
                 </motion.div>
               </div>

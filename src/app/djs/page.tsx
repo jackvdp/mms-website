@@ -227,10 +227,6 @@ const cardVariants = {
 };
 
 export default function DJsPage() {
-  const scrollToContact = () => {
-    window.location.href = "/#contact";
-  };
-
   return (
     <div className="dark">
       <ScrollProgress />
@@ -264,8 +260,8 @@ export default function DJsPage() {
                 With over 30 years in the industry, we have a network of hundreds of professional DJs. From resident DJs for bars and restaurants to event specialists, we can find the perfect DJ for any occasion.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="neon-glow rounded-full" onClick={scrollToContact}>
-                  Let's Talk
+                <Button size="lg" className="neon-glow rounded-full" asChild>
+                  <Link href="/contact">Let&apos;s Talk</Link>
                 </Button>
                 <Button size="lg" variant="outline" className="!border-primary !text-primary hover:!bg-primary/10 rounded-full" asChild>
                   <a href="#our-djs">Meet Our DJs</a>
@@ -601,8 +597,8 @@ export default function DJsPage() {
                 Every event is unique, and we take the time to understand yours. Get in touch and we&apos;ll personally match you with the right DJ for your occasion.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="neon-glow rounded-full" onClick={scrollToContact}>
-                  Let's Talk
+                <Button size="lg" className="neon-glow rounded-full" asChild>
+                  <Link href="/contact">Let&apos;s Talk</Link>
                 </Button>
                 <Button size="lg" variant="outline" className="!border-primary !text-primary hover:!bg-primary/10 rounded-full" asChild>
                   <Link href="/">Back to Home</Link>
