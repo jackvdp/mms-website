@@ -21,6 +21,17 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 
+const djSetupImages = [
+  "/media/services/djsetup/image.png",
+  "/media/services/djsetup/image1.png",
+  "/media/services/djsetup/image2.png",
+  "/media/services/djsetup/image3.png",
+  "/media/services/djsetup/image4.png",
+  "/media/services/djsetup/image5.png",
+  "/media/services/djsetup/image6.png",
+  "/media/services/djsetup/image7.png",
+];
+
 const showcaseServices = [
   { name: "Wedding DJ", image: "/media/services/WeddingDJ.png" },
   { name: "360 Booths", image: "/media/services/360Booths.png" },
@@ -493,6 +504,52 @@ export default function ServicesPage() {
                       {item.name}
                     </h3>
                   </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* DJ Setup Section */}
+        <section className="relative bg-background py-24 md:py-32 overflow-hidden">
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-neon-purple/10 rounded-full blur-[100px] pointer-events-none" />
+
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <div className="inline-flex items-center justify-center gap-2 mb-4">
+                <Music2 className="h-6 w-6 text-primary" />
+                <span className="text-primary font-semibold uppercase tracking-wider text-sm">DJ Equipment</span>
+              </div>
+              <h2 className="font-display text-3xl uppercase tracking-wider text-foreground sm:text-4xl md:text-5xl mb-6">
+                DJ Setup
+              </h2>
+              <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
+                Professional DJ booths, sound systems, and lighting rigs tailored to your venue.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+              {djSetupImages.map((image, index) => (
+                <motion.div
+                  key={image}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.4, delay: (index % 4) * 0.1 }}
+                  className="group relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 hover:border-primary/30 transition-colors"
+                >
+                  <Image
+                    src={image}
+                    alt={`DJ setup ${index + 1}`}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
                 </motion.div>
               ))}
             </div>
