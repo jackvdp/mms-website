@@ -306,7 +306,7 @@ export default function ServicesPage() {
                 <Button size="lg" className="neon-glow rounded-full" onClick={scrollToContact}>
                   Let&apos;s Talk
                 </Button>
-                <Button size="lg" variant="outline" className="!border-primary !text-primary hover:!bg-primary/10 rounded-full">
+                <Button size="lg" variant="outline" className="!border-primary !text-primary hover:!bg-primary/10 rounded-full" asChild>
                   <a href="#our-services">Explore Services</a>
                 </Button>
               </div>
