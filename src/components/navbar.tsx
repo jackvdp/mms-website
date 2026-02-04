@@ -16,10 +16,8 @@ type NavLink = {
 
 const navLinks: NavLink[] = [
   { href: "#about", label: "About" },
-  { href: "#gallery", label: "Gallery" },
-  { href: "/services", label: "Services", isPage: true },
+  { href: "/services", label: "Events", isPage: true },
   { href: "/djs", label: "DJs", isPage: true },
-  { href: "#testimonials", label: "Testimonials" },
 ];
 
 export function Navbar() {
@@ -95,7 +93,7 @@ export function Navbar() {
               className="hidden sm:inline-flex rounded-full"
               onClick={(e) => handleSectionLink(e, "#contact")}
             >
-              Book Now
+              Get In Touch
             </Button>
 
             {/* Mobile Menu Button */}
@@ -203,7 +201,7 @@ export function Navbar() {
                     className="neon-glow rounded-full mt-4"
                     onClick={(e) => handleSectionLink(e, "#contact")}
                   >
-                    Book Now
+                    Get In Touch
                   </Button>
                 </motion.div>
               </div>
