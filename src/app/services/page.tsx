@@ -296,10 +296,6 @@ const cardVariants = {
 };
 
 export default function ServicesPage() {
-  const scrollToContact = () => {
-    window.location.href = "/#contact";
-  };
-
   return (
     <div className="dark">
       <ScrollProgress />
@@ -333,8 +329,8 @@ export default function ServicesPage() {
                 With over 30 years in the entertainment industry, we don&apos;t just offer services—we craft experiences. Tell us your vision, and we&apos;ll make it happen.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="neon-glow rounded-full" onClick={scrollToContact}>
-                  Let&apos;s Talk
+                <Button size="lg" className="neon-glow rounded-full" asChild>
+                  <Link href="/contact">Let&apos;s Talk</Link>
                 </Button>
                 <Button size="lg" variant="outline" className="!border-primary !text-primary hover:!bg-primary/10 rounded-full" asChild>
                   <a href="#our-services">Explore Services</a>
@@ -620,8 +616,8 @@ export default function ServicesPage() {
                 <strong>Tell us what you need, and we&apos;ll find it.</strong>
               </p>
 
-              <Button size="lg" className="neon-glow rounded-full" onClick={scrollToContact}>
-                Let&apos;s Talk
+              <Button size="lg" className="neon-glow rounded-full" asChild>
+                <Link href="/contact">Let&apos;s Talk</Link>
               </Button>
             </motion.div>
           </div>
@@ -648,8 +644,8 @@ export default function ServicesPage() {
                 Every event is unique, and we take the time to understand yours. Get in touch for a personal consultation and let&apos;s bring your vision to life.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="neon-glow rounded-full" onClick={scrollToContact}>
-                  Let&apos;s Talk
+                <Button size="lg" className="neon-glow rounded-full" asChild>
+                  <Link href="/contact">Let&apos;s Talk</Link>
                 </Button>
                 <Button size="lg" variant="outline" className="!border-primary !text-primary hover:!bg-primary/10 rounded-full" asChild>
                   <Link href="/">Back to Home</Link>
