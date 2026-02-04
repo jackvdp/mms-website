@@ -125,7 +125,7 @@ export default function AboutPage() {
                 },
                 {
                   title: "30+ Years Experience",
-                  description: "I&apos;ve been in this industry for over three decades. I&apos;ve seen what works, what doesn&apos;t, and I know how to make every event run smoothly.",
+                  description: "I've been in this industry for over three decades. I've seen what works, what doesn't, and I know how to make every event run smoothly.",
                 },
                 {
                   title: "Unmatched Network",
@@ -133,11 +133,11 @@ export default function AboutPage() {
                 },
                 {
                   title: "Bespoke Solutions",
-                  description: "No two events are the same. I&apos;ll tailor everything to your vision, your venue, and your guests — not just offer a one-size-fits-all package.",
+                  description: "No two events are the same. I'll tailor everything to your vision, your venue, and your guests — not just offer a one-size-fits-all package.",
                 },
                 {
                   title: "Start to Finish",
-                  description: "From the first phone call to the last song of the night, I&apos;m with you every step of the way. I&apos;ll handle the details so you can enjoy your event.",
+                  description: "From the first phone call to the last song of the night, I'm with you every step of the way. I'll handle the details so you can enjoy your event.",
                 },
                 {
                   title: "Trusted by Many",
