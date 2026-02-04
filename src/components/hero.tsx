@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export function Hero() {
   const [videoLoaded, setVideoLoaded] = useState(false);
@@ -22,20 +23,6 @@ export function Hero() {
   const handleVideoLoaded = () => {
     setVideoLoaded(true);
     videoRef.current?.play();
-  };
-
-  const scrollToContact = () => {
-    const element = document.querySelector("#contact");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-  const scrollToServices = () => {
-    const element = document.querySelector("#services");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
   };
 
   return (
@@ -77,7 +64,7 @@ export function Hero() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="mb-4 font-display text-5xl font-bold uppercase tracking-wider text-primary drop-shadow-[0_0_25px_rgba(255,20,147,0.3)] sm:text-6xl md:text-7xl lg:text-8xl"
         >
-          Professional DJs & Bands
+          DJs, Entertainment
           <br />
           <motion.span
             initial={{ opacity: 0, y: 20 }}
@@ -85,7 +72,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             className="text-foreground"
           >
-            for Weddings & Events
+            & Event Services
           </motion.span>
         </motion.h1>
 
@@ -95,7 +82,7 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           className="mb-8 max-w-2xl text-lg font-semibold text-foreground/90 sm:text-xl md:text-2xl"
         >
-          Unforgettable entertainment across London, Essex & South East UK
+          Personal service, unforgettable events — across London, Essex & the South East
         </motion.p>
 
         <motion.div
@@ -104,11 +91,11 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
           className="flex flex-col gap-4 sm:flex-row"
         >
-          <Button size="lg" className="neon-glow text-lg" onClick={scrollToContact}>
-            Book Now
+          <Button size="lg" className="neon-glow text-lg" asChild>
+            <Link href="/contact">Get In Touch</Link>
           </Button>
-          <Button size="lg" variant="outline" className="text-lg !border-white !bg-white/20 text-white hover:!bg-white/30" onClick={scrollToServices}>
-            View Services
+          <Button size="lg" variant="outline" className="text-lg !border-white !bg-white/20 text-white hover:!bg-white/30" asChild>
+            <Link href="/services">View Services</Link>
           </Button>
         </motion.div>
       </div>

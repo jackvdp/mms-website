@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
@@ -33,13 +34,6 @@ export function About() {
   const y2 = useTransform(scrollYProgress, [0, 1], [0, -200]);
   const y3 = useTransform(scrollYProgress, [0, 1], [50, -150]);
 
-  const scrollToContact = () => {
-    const element = document.querySelector("#contact");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <section id="about" ref={containerRef} className="relative bg-background py-24 md:py-32 overflow-hidden">
       {/* Background Glow Effects - positioned to blend with hero */}
@@ -52,16 +46,21 @@ export function About() {
           className="text-center mb-20"
         >
           <h2 className="font-display text-4xl uppercase tracking-wider text-primary drop-shadow-[0_0_25px_rgba(255,20,147,0.3)] sm:text-5xl md:text-6xl lg:text-7xl mb-6">
-            Your Vision,
+            Your Event,
             <br />
-            <span className="text-foreground">Our Service</span>
+            <span className="text-foreground">Your Way</span>
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground md:text-xl mb-8">
-            Whatever you need for your perfect event, we can source it. Through our extensive network of trusted partners built over 30 years, we connect you with the best entertainment, equipment, and services — all tailored to your vision.
+            From DJs and live bands to photo booths, casino nights, and full event production — we source everything you need through our trusted network built over 30 years. Personal service, every time.
           </p>
-          <Button size="lg" className="neon-glow rounded-full" onClick={scrollToContact}>
-            Get in Touch
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" className="neon-glow rounded-full" asChild>
+              <Link href="/contact">Get in Touch</Link>
+            </Button>
+            <Button size="lg" variant="outline" className="!border-primary !text-primary hover:!bg-primary/10 rounded-full" asChild>
+              <Link href="/about">About Simone</Link>
+            </Button>
+          </div>
         </motion.div>
 
         {/* What We Do Section with Parallax Images */}
@@ -75,11 +74,16 @@ export function About() {
               What We Do
             </h3>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              With 30 years in the entertainment industry, we specialise in turning every event—from small gatherings to large celebrations and corporate functions—into memorable experiences. We handle all the details, from selecting the perfect venue to providing everything needed to realize your vision. Our personalized service focuses on your preferences, offering unique suggestions and alternatives to enhance your event.
+              With 30 years in the entertainment industry, we specialise in turning every event — from weddings and private parties to corporate functions and festivals — into memorable experiences. We work directly with you to understand your vision, suggest ideas, and source the right DJs, entertainment, and services for your occasion.
             </p>
-            <Button size="lg" variant="outline" className="!border-primary !text-primary hover:!bg-primary/10 rounded-full" onClick={scrollToContact}>
-              Make an Enquiry
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button size="lg" variant="outline" className="!border-primary !text-primary hover:!bg-primary/10 rounded-full" asChild>
+                <Link href="/services">View Services</Link>
+              </Button>
+              <Button size="lg" variant="outline" className="!border-primary !text-primary hover:!bg-primary/10 rounded-full" asChild>
+                <Link href="/djs">Meet Our DJs</Link>
+              </Button>
+            </div>
           </motion.div>
 
           {/* Parallax Image Grid */}

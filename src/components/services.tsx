@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Music, Camera, Lightbulb, PartyPopper, Users, Mic2, Sparkles, HeadphonesIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const services = [
   {
@@ -62,13 +63,6 @@ const cardVariants = {
 };
 
 export function Services() {
-  const scrollToContact = () => {
-    const element = document.querySelector("#contact");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <section id="services" className="relative bg-background py-24 md:py-32 overflow-hidden">
       {/* Background Glows */}
@@ -148,9 +142,14 @@ export function Services() {
           <p className="text-muted-foreground mb-6">
             Not sure what you need? We&apos;ll help you create the perfect package.
           </p>
-          <Button size="lg" className="neon-glow rounded-full" onClick={scrollToContact}>
-            Discuss Your Event
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" className="neon-glow rounded-full" asChild>
+              <Link href="/services">Explore All Services</Link>
+            </Button>
+            <Button size="lg" variant="outline" className="!border-primary !text-primary hover:!bg-primary/10 rounded-full" asChild>
+              <Link href="/contact">Discuss Your Event</Link>
+            </Button>
+          </div>
         </motion.div>
       </div>
     </section>
